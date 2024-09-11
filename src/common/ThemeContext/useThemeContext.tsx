@@ -7,11 +7,14 @@ export const useThemeContext = () => {
 
   const resetState = () => {
     context.toggleTheme();
+    context.toggleTheme();
   };
 
   return {
     theme: context.theme,
     toggleTheme: context.toggleTheme,
+    mode: context.mode,
+    toggleMode: context.toggleMode,
     resetState,
   };
 };

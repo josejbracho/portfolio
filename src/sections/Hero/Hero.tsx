@@ -1,5 +1,6 @@
 import styles from "./HeroStyles.module.css";
-import heroImg from "../../assets/hero-img.png";
+import normalHeroImg from "../../assets/hero-img.png";
+import pixelHeroImg from "../../assets/hero-img-pixel.png";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
 import twitterLight from "../../assets/twitter-light.svg";
@@ -10,29 +11,43 @@ import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
 import CV from "../../assets/Jose Bracho - Front End Developer.pdf";
 import { useThemeContext } from "../../common/ThemeContext/useThemeContext";
+import { Theme } from "../../common/ThemeContext/types";
+import { NormalIcon } from "../../assets/icons/NormalIcon";
+import { PixelIcon } from "../../assets/icons/PixelIcon";
 
 function Hero() {
-  const { theme, toggleTheme } = useThemeContext();
+  const { theme, toggleTheme, mode, toggleMode } = useThemeContext();
 
-  const themeIcon = theme === "light" ? sun : moon;
-  const twitterIcon = theme === "light" ? twitterLight : twitterDark;
-  const githubIcon = theme === "light" ? githubLight : githubDark;
-  const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark;
+  const themeIcon = theme === Theme.LIGHT ? sun : moon;
+  const svgFill = theme === Theme.LIGHT ? "#222" : "#fff";
+  const modeIcon =
+    mode === Theme.NORMAL ? (
+      <NormalIcon fill={svgFill} />
+    ) : (
+      <PixelIcon fill={svgFill} />
+    );
+  const twitterIcon = theme === Theme.LIGHT ? twitterLight : twitterDark;
+  const githubIcon = theme === Theme.LIGHT ? githubLight : githubDark;
+  const linkedinIcon = theme === Theme.LIGHT ? linkedinLight : linkedinDark;
+  const heroImg = mode === Theme.NORMAL ? normalHeroImg : pixelHeroImg;
 
   return (
     <section id="hero" className={styles.container}>
-      <div className={styles.colorModeContainer}>
+      <div className={styles.themeModeContainer}>
         <img
           src={heroImg}
           className={styles.hero}
           alt="Profile picture of Jose Bracho"
         />
         <img
-          className={styles.colorMode}
+          className={styles.theme}
           src={themeIcon}
           alt="Color mode icon"
           onClick={toggleTheme}
         />
+        <div className={styles.mode} onClick={toggleMode}>
+          {modeIcon}
+        </div>
       </div>
       <div className={styles.info}>
         <h1>

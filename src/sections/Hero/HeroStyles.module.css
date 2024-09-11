@@ -53,17 +53,27 @@
   }
 }
 
-.colorModeContainer {
+.themeModeContainer {
   position: relative;
 }
 
-.colorMode {
+.theme {
   position: absolute;
   right: 0;
   width: 25px;
 }
 
-.colorMode:hover {
+.theme:hover {
+  cursor: pointer;
+}
+
+.mode {
+  position: absolute;
+  left: 0;
+  width: 25px;
+}
+
+.mode:hover {
   cursor: pointer;
 }
 
