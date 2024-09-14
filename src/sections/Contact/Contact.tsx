@@ -1,6 +1,10 @@
-import styles from './ContactStyles.module.css';
+import { Theme } from "../../common/ThemeContext/types";
+import { useThemeContext } from "../../common/ThemeContext/useThemeContext";
+import styles from "./ContactStyles.module.css";
 
 function Contact() {
+  const { theme, mode } = useThemeContext();
+
   return (
     <section id="contact" className={styles.container}>
       <h1 className="sectionTitle">Contact</h1>
@@ -37,9 +41,21 @@ function Contact() {
             name="message"
             id="message"
             placeholder="Message"
-            required></textarea>
+            required
+          ></textarea>
         </div>
-        <input className="hover btn" type="submit" value="Submit" />
+        <button
+          type="submit"
+          className={`${
+            mode === Theme.NORMAL
+              ? styles.normalButton
+              : theme === Theme.LIGHT
+              ? "nes-btn is-primary"
+              : "nes-btn "
+          }`}
+        >
+          Submit
+        </button>
       </form>
     </section>
   );

@@ -22,9 +22,17 @@ function Hero() {
   const svgFill = theme === Theme.LIGHT ? "#222" : "#fff";
   const modeIcon =
     mode === Theme.NORMAL ? (
-      <NormalIcon fill={svgFill} className={styles.mode} onClick={toggleMode} />
+      <NormalIcon
+        fill={svgFill}
+        className={`${styles.mode} nes-pointer`}
+        onClick={toggleMode}
+      />
     ) : (
-      <PixelIcon fill={svgFill} className={styles.mode} onClick={toggleMode} />
+      <PixelIcon
+        fill={svgFill}
+        className={`${styles.mode} nes-pointer`}
+        onClick={toggleMode}
+      />
     );
   const twitterIcon = theme === Theme.LIGHT ? twitterLight : twitterDark;
   const githubIcon = theme === Theme.LIGHT ? githubLight : githubDark;
@@ -33,14 +41,18 @@ function Hero() {
 
   return (
     <section id="hero" className={styles.container}>
-      <div className={styles.themeModeContainer}>
+      <div
+        className={`${styles.themeModeContainer} ${
+          mode === Theme.NORMAL && styles.normalHover
+        }`}
+      >
         <img
           src={heroImg}
           className={styles.hero}
           alt="Profile picture of Jose Bracho"
         />
         <img
-          className={styles.theme}
+          className={`${styles.theme} nes-pointer`}
           src={themeIcon}
           alt="Color mode icon"
           onClick={toggleTheme}
@@ -57,13 +69,25 @@ function Hero() {
         <span>
           {/* TODO: modify links */}
           <a href="https://twitter.com/" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
+            {mode === Theme.NORMAL ? (
+              <img src={twitterIcon} alt="Twitter icon" />
+            ) : (
+              <i className="nes-icon twitter"></i>
+            )}
           </a>
           <a href="https://github.com/" target="_blank">
-            <img src={githubIcon} alt="Github icon" />
+            {mode === Theme.NORMAL ? (
+              <img src={githubIcon} alt="Github icon" />
+            ) : (
+              <i className="nes-icon github"></i>
+            )}
           </a>
           <a href="https://linkedin.com/" target="_blank">
-            <img src={linkedinIcon} alt="Linkedin icon" />
+            {mode === Theme.NORMAL ? (
+              <img src={linkedinIcon} alt="Linkedin icon" />
+            ) : (
+              <i className="nes-icon linkedin"></i>
+            )}
           </a>
         </span>
         <p className={styles.description}>
@@ -71,7 +95,17 @@ function Hero() {
           implementing high-quality, responsive web applications.
         </p>
         <a href={CV} download>
-          <button className="hover">Resume</button>
+          <button
+            className={`${
+              mode === Theme.NORMAL
+                ? styles.normalButton
+                : theme === Theme.LIGHT
+                ? "nes-btn is-primary"
+                : "nes-btn "
+            }`}
+          >
+            Resume
+          </button>
         </a>
       </div>
     </section>
