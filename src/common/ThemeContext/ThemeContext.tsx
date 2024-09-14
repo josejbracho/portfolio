@@ -29,6 +29,23 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("mode", mode);
   }, [theme, mode]);
 
+  useEffect(() => {
+    if (mode === Theme.PIXEL) {
+      // Dynamically add the nes.css link to the head
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "/node_modules/nes.css/css/nes.min.css"; // Adjust the path if needed
+      link.id = "nes-css-link";
+      document.head.appendChild(link);
+    } else {
+      // Remove the nes.css link from the head
+      const existingLink = document.getElementById("nes-css-link");
+      if (existingLink) {
+        document.head.removeChild(existingLink);
+      }
+    }
+  }, [mode]);
+
   const toggleTheme = () => {
     setTheme((prevTheme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT

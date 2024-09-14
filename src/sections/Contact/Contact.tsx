@@ -51,7 +51,7 @@ function Contact() {
               ? styles.normalButton
               : theme === Theme.LIGHT
               ? "nes-btn is-primary"
-              : "nes-btn "
+              : "nes-btn"
           }`}
         >
           Submit
