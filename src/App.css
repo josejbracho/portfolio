@@ -15,9 +15,8 @@
   --footer-text-color: #888;
   --font-family: "Roboto Mono", monospace;
   --font-family-2: "Rubik", monospace;
-  /* TODO: define values */
   --h1-font-size: 32px;
-  --h2-font-size: 20px;
+  --h3-font-size: 20px;
   --p-font-size: 16px;
   --scale: 0.875;
 }
@@ -36,7 +35,7 @@
   --font-family: "Press Start 2P", monospace;
   --font-family-2: "KongText", monospace;
   --h1-font-size: calc(32px * var(--scale));
-  --h2-font-size: calc(20px * var(--scale));
+  --h3-font-size: calc(20px * var(--scale));
   --p-font-size: calc(16px * var(--scale));
 }
 
@@ -45,16 +44,16 @@
 @media (min-width: 768px) {
   :root {
     --h1-font-size: 2.5rem;
-    --h2-font-size: 2rem;
     --h3-font-size: 1.75rem;
+    --p-font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
     --h1-font-size: 3rem;
-    --h2-font-size: 2.5rem;
     --h3-font-size: 2rem;
+    --p-font-size: 1.25rem;
   }
 }
 
@@ -93,7 +92,7 @@ h2 {
 
 h2,
 h3 {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
 }
 
 h1 {
@@ -119,14 +118,14 @@ p {
     gap: 100px;
   }
   h1 {
-    font-size: 40px;
+    font-size: var(--h1-font-size);
   }
   h2,
   h3 {
-    font-size: 24px;
+    font-size: var(--h3-font-size);
   }
   p {
-    font-size: 20px;
+    font-size: var(--p-font-size);
   }
 
   .sectionTitle {
@@ -138,7 +137,7 @@ p {
       gap: 200px;
     }
     h1 {
-      font-size: 48px;
+      font-size: var(--h1-font-size);
     }
 
     .sectionTitle {

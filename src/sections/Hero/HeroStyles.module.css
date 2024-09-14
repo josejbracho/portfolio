@@ -55,6 +55,8 @@
 
 .themeModeContainer {
   position: relative;
+  max-width: max-content;
+  align-self: center;
 }
 
 .theme {
@@ -70,7 +72,10 @@
 .mode {
   position: absolute;
   left: 0;
+  bottom: 0;
   width: 25px;
+  height: 24px;
+  width: 24px;
 }
 
 .mode:hover {
@@ -79,6 +84,7 @@
 
 .description {
   max-width: 24ch;
+  align-self: center;
 }
 
 .info {
@@ -96,6 +102,10 @@
     .hero {
       max-width: 350px;
       width: 350px;
+    }
+
+    .info {
+      min-width: 450px;
     }
   }
 }

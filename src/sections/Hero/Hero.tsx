@@ -22,9 +22,9 @@ function Hero() {
   const svgFill = theme === Theme.LIGHT ? "#222" : "#fff";
   const modeIcon =
     mode === Theme.NORMAL ? (
-      <NormalIcon fill={svgFill} />
+      <NormalIcon fill={svgFill} className={styles.mode} onClick={toggleMode} />
     ) : (
-      <PixelIcon fill={svgFill} />
+      <PixelIcon fill={svgFill} className={styles.mode} onClick={toggleMode} />
     );
   const twitterIcon = theme === Theme.LIGHT ? twitterLight : twitterDark;
   const githubIcon = theme === Theme.LIGHT ? githubLight : githubDark;
@@ -45,9 +45,7 @@ function Hero() {
           alt="Color mode icon"
           onClick={toggleTheme}
         />
-        <div className={styles.mode} onClick={toggleMode}>
-          {modeIcon}
-        </div>
+        {modeIcon}
       </div>
       <div className={styles.info}>
         <h1>

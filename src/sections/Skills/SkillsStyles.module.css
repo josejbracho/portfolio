@@ -20,12 +20,17 @@
   align-self: center;
   flex-wrap: wrap;
   row-gap: 40px;
+  gap: 10px;
   max-width: 26ch;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 hr {
   width: 100px;
-  height: 1px;
+  height: 1px !important;
   border: none;
   background-color: var(--text-color);
   margin: 30px auto;
