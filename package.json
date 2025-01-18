@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && remix build && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build": "tsc -b && vite build",
     "remix:vite:build": "remix build && vite build"
+
   },
   "dependencies": {
     "nes.css": "^2.3.0",
