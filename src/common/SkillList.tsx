@@ -1,4 +1,9 @@
-function SkillList({ src, skill }) {
+interface SkillListProps {
+  src: string;
+  skill: string;
+}
+
+function SkillList({ src, skill }: SkillListProps) {
   return (
     <span>
       <img src={src} alt="Checkmark icon" />

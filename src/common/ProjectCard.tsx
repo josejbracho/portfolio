@@ -1,6 +1,13 @@
-import React from 'react';
+// import React from 'react';
 
-function ProjectCard({ src, link, h3, p }) {
+interface ProjectCardProps {
+  src: string;
+  link: string;
+  h3: string;
+  p: string;
+}
+
+function ProjectCard({ src, link, h3, p }: ProjectCardProps) {
   return (
     <a href={link} target="_blank">
       <img className="hover" src={src} alt={`${h3} logo`} />
