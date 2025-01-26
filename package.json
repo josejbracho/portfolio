@@ -9,7 +9,6 @@
     "preview": "vite preview",
     "build": "tsc -b && vite build",
     "remix:vite:build": "remix build && vite build"
-
   },
   "dependencies": {
     "nes.css": "^2.3.0",
