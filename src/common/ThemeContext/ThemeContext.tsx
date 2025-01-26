@@ -34,7 +34,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       // Dynamically add the nes.css link to the head
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "/node_modules/nes.css/css/nes.min.css"; // Adjust the path if needed
+      link.href = "https://unpkg.com/nes.css@latest/css/nes.min.css";
       link.id = "nes-css-link";
       document.head.appendChild(link);
     } else {
@@ -63,7 +63,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       // Dynamically add the nes.css link to the head
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "/node_modules/nes.css/css/nes.min.css"; // Adjust the path if needed
+      link.href = "https://unpkg.com/nes.css@latest/css/nes.min.css";
       link.id = "nes-css-link";
       document.head.appendChild(link);
     } else if (mode === Theme.PIXEL && existingLink) {
