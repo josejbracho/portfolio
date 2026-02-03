@@ -9,7 +9,7 @@ import githubLight from "../../assets/github-light.svg";
 import githubDark from "../../assets/github-dark.svg";
 import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
-import CV from "../../assets/Jose Bracho - Front End Developer.pdf";
+import CV from "../../assets/Jose_Javier_Bracho_-_Full_Stack_Software_Engineer.pdf";
 import { useThemeContext } from "../../common/ThemeContext/useThemeContext";
 import { Theme } from "../../common/ThemeContext/types";
 import { NormalIcon } from "../../assets/icons/NormalIcon";
@@ -65,24 +65,23 @@ function Hero() {
           <br />
           Bracho
         </h1>
-        <h2>Frontend Developer</h2>
+        <h2>Full Stack Software Engineer</h2>
         <span>
-          {/* TODO: modify links */}
-          <a href="https://twitter.com/" target="_blank">
+          <a href="https://x.com/jaybracho" target="_blank">
             {mode === Theme.NORMAL ? (
               <img src={twitterIcon} alt="Twitter icon" />
             ) : (
               <i className="nes-icon twitter"></i>
             )}
           </a>
-          <a href="https://github.com/" target="_blank">
+          <a href="https://github.com/josejbracho" target="_blank">
             {mode === Theme.NORMAL ? (
               <img src={githubIcon} alt="Github icon" />
             ) : (
               <i className="nes-icon github"></i>
             )}
           </a>
-          <a href="https://linkedin.com/" target="_blank">
+          <a href="hhttps://www.linkedin.com/in/josejbracho/" target="_blank">
             {mode === Theme.NORMAL ? (
               <img src={linkedinIcon} alt="Linkedin icon" />
             ) : (
@@ -91,8 +90,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          Dynamic and innovative Front End Developer skilled in designing and
-          implementing high-quality, responsive web applications.
+        Full-stack software engineer focused on building scalable, data-driven applications and internal tools that help teams make better decisions.
         </p>
         <a href={CV} download>
           <button

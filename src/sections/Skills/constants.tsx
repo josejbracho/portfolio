@@ -1,17 +1,32 @@
-export const BASIC_SKILLS: string[] = [
-  "HTML",
-  "CSS",
-  "JavaScript",
+export const FRONTEND_SKILLS: string[] = [
+  "HTML5",
+  "CSS3",
+  "JavaScript (ES6+)",
   "TypeScript",
-  "Node",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "SASS",
+  "TanStack Query",
 ];
 
-export const TECHS: string[] = ["React", "Next.js", "TanStack Query", "SASS"];
+export const BACKEND_SKILLS: string[] = [
+  "Node.js",
+  "REST APIs",
+  "Server-Side Logic",
+  "Authentication & Authorization",
+];
 
-export const ADVANCED_SKILLS: string[] = [
-  "AWS",
-  "S3",
-  "DynamoDB",
-  "Git",
-  "Jest",
+export const DATA_SKILLS: string[] = [
+  "SQL",
+  "Relational Databases",
+  "ORMs",
+  "Analytics & Reporting",
+];
+
+export const DEVOPS_SKILLS: string[] = [
+  "Git & GitHub",
+  "CI/CD Pipelines",
+  "Automated Testing (Jest, Playwright)",
+  "Cloud Platforms (AWS)",
 ];

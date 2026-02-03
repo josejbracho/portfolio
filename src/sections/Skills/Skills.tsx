@@ -3,7 +3,12 @@ import checkMarkIconDark from "../../assets/checkmark-dark.svg";
 import checkMarkIconLight from "../../assets/checkmark-light.svg";
 import { useThemeContext } from "../../common/ThemeContext/useThemeContext";
 import SkillList from "../../common/SkillList";
-import { ADVANCED_SKILLS, BASIC_SKILLS, TECHS } from "./constants";
+import {
+  BACKEND_SKILLS,
+  DATA_SKILLS,
+  DEVOPS_SKILLS,
+  FRONTEND_SKILLS,
+} from "./constants";
 import { Theme } from "../../common/ThemeContext/types";
 
 function Skills() {
@@ -11,26 +16,32 @@ function Skills() {
   const checkMarkIcon =
     theme === Theme.LIGHT ? checkMarkIconLight : checkMarkIconDark;
 
-  const BasicSkills = BASIC_SKILLS.map((skill) => {
-    return <SkillList src={checkMarkIcon} skill={skill} />;
+  const FrontendSkills = FRONTEND_SKILLS.map((skill) => {
+    return <SkillList key={skill} src={checkMarkIcon} skill={skill} />;
   });
 
-  const Techs = TECHS.map((skill) => {
-    return <SkillList src={checkMarkIcon} skill={skill} />;
+  const BackendSkills = BACKEND_SKILLS.map((skill) => {
+    return <SkillList key={skill} src={checkMarkIcon} skill={skill} />;
   });
 
-  const AdvancedSkills = ADVANCED_SKILLS.map((skill) => {
-    return <SkillList src={checkMarkIcon} skill={skill} />;
+  const DataSkills = DATA_SKILLS.map((skill) => {
+    return <SkillList key={skill} src={checkMarkIcon} skill={skill} />;
+  });
+
+  const DevOpsSkills = DEVOPS_SKILLS.map((skill) => {
+    return <SkillList key={skill} src={checkMarkIcon} skill={skill} />;
   });
 
   return (
     <section id="skills" className={styles.container}>
       <h1 className="sectionTitle">Skills</h1>
-      <div className={styles.skillList}>{BasicSkills}</div>
+      <div className={styles.skillList}>{FrontendSkills}</div>
       <hr />
-      <div className={styles.skillList}>{Techs}</div>
+      <div className={styles.skillList}>{BackendSkills}</div>
       <hr />
-      <div className={styles.skillList}>{AdvancedSkills}</div>
+      <div className={styles.skillList}>{DataSkills}</div>
+      <hr />
+      <div className={styles.skillList}>{DevOpsSkills}</div>
     </section>
   );
 }
