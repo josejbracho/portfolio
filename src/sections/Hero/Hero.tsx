@@ -81,7 +81,7 @@ function Hero() {
               <i className="nes-icon github"></i>
             )}
           </a>
-          <a href="hhttps://www.linkedin.com/in/josejbracho/" target="_blank">
+          <a href="https://www.linkedin.com/in/josejbracho/" target="_blank">
             {mode === Theme.NORMAL ? (
               <img src={linkedinIcon} alt="Linkedin icon" />
             ) : (
